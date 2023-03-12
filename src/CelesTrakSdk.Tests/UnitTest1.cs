@@ -1,4 +1,4 @@
-namespace Placeholder.Tests;
+namespace CelesTrakSdk.Tests;
 
 public class UnitTest1
 {
