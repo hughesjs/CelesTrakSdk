@@ -6,7 +6,7 @@ using CsvHelper.TypeConversion;
 
 namespace CelesTrakSdk.Internal.Parsers;
 
-public class StringEnumConverterWithAttributeSupport<TEnum>: EnumConverter where TEnum: struct, Enum
+internal class StringEnumConverterWithAttributeSupport<TEnum>: EnumConverter where TEnum: struct, Enum
 {
 	public StringEnumConverterWithAttributeSupport() : base(typeof(TEnum)) { }
 

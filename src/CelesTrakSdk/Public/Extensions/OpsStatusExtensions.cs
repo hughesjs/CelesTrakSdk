@@ -1,7 +1,6 @@
-using CelesTrakSdk.Public.Models;
 using CelesTrakSdk.Public.Models.Enums;
 
-namespace CelesTrakSdk.Internal.Extensions;
+namespace CelesTrakSdk.Public.Extensions;
 
 public static class OpsStatusExtensions
 {

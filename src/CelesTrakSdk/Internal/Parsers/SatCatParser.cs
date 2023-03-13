@@ -5,7 +5,7 @@ using CsvHelper;
 
 namespace CelesTrakSdk.Internal.Parsers;
 
-public static class SatCatParser
+internal static class SatCatParser
 {
 	public static async Task<List<SatCatRecord>> Parse(Stream csvStream)
 	{
