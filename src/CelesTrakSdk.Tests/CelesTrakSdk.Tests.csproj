@@ -28,4 +28,8 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CelesTrakSdk\CelesTrakSdk.csproj" />
+    </ItemGroup>
+
 </Project>

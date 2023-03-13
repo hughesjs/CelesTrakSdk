@@ -10,15 +10,26 @@
         <Title>CelesTrakSdk</Title>
         <Authors>James Hughes</Authors>
         <Description>My package description</Description>
-        <PackageProjectUrl>https://github.com/James Hughes/dotnet-7-ci-cd-template</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/James Hughes/dotnet-7-ci-cd-template/blob/master/LICENSE</PackageLicenseUrl>
-        <RepositoryUrl>https://github.com/James Hughes/dotnet-7-ci-cd-template.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/hughesjs/CelesTrakSdk</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/hughesjs/CelesTrakSdk/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/hughesjs/CelesTrakSdk.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageReadmeFile>./README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="../../README.md" Pack="true" PackagePath="\"/>
+        <None Include="../../README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <InternalsVisibleTo Include="CelesTrakSdk.Tests" />
+        <InternalsVisibleTo Include="CelesTrakSdk.Microsoft.Extensions.DependencyInjection" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="CsvHelper" Version="30.0.1" />
+      <PackageReference Include="EnumExtensions.System.Text.Json" Version="1.1.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
     </ItemGroup>
 
 </Project>
