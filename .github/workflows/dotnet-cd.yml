@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
     paths: 
-      - src/CelesTrakSdk/**
+      - src/**
   workflow_dispatch:
 jobs:
 
