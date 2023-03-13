@@ -8,7 +8,7 @@ public static class DependencyInjectionExtensions
 {
 	public static IServiceCollection AddCelesTrakServices(this IServiceCollection services)
 	{
-		services.AddHttpClient<ICelesTrakClient, CelesTrakClient>(h => h.BaseAddress = new("https://celestrak.org/satcat/records.php"));
+		services.AddHttpClient<ICelesTrakClient, CelesTrakClient>(h => h.BaseAddress = new("https://celestrak.org/"));
 
 		return services;
 	}
