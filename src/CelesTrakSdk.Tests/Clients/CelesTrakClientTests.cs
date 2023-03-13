@@ -32,7 +32,7 @@ public class CelesTrakClientTests
 										 Owner          = "ISS",
 										 LaunchDate     = DateOnly.Parse("1998-11-20"),
 										 LaunchSite     = "TYMSC",
-										 DecayDate      = "",
+										 DecayDate      = null,
 										 Period         = 92.95,
 										 Inclination    = 51.64,
 										 Apogee         = 423,

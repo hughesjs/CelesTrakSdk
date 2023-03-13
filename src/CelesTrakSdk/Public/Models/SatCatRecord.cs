@@ -27,8 +27,8 @@ public record SatCatRecord
 	public required string ObjectType { get; init; } //TODO Enumify this
 
 	[JsonPropertyName("OPS_STATUS_CODE")]
-	[JsonConverter(typeof(JsonStringEnumConverterWithAttributeSupport))]
 	[Name("OPS_STATUS_CODE")]
+	[JsonConverter(typeof(JsonStringEnumConverterWithAttributeSupport))]
 	[TypeConverter(typeof(StringEnumConverterWithAttributeSupport<OpsStatus>))]
 	public required OpsStatus OpsStatusCode { get; init; }
 
@@ -46,7 +46,8 @@ public record SatCatRecord
 
 	[JsonPropertyName("DECAY_DATE")]
 	[Name("DECAY_DATE")]
-	public required string DecayDate { get; init; }
+	[JsonConverter(typeof(NullableDateOnlyConverter))]
+	public DateOnly? DecayDate { get; init; }
 
 	[JsonPropertyName("PERIOD")]
 	[Name("PERIOD")]
