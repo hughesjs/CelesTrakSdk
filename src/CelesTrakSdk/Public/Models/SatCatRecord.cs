@@ -79,5 +79,7 @@ public record SatCatRecord
 
 	[JsonPropertyName("ORBIT_TYPE")]
 	[Name("ORBIT_TYPE")]
-	public required string OrbitType { get; init; }
+	[JsonConverter(typeof(JsonStringEnumConverterWithAttributeSupport))]
+	[TypeConverter(typeof(StringEnumConverterWithAttributeSupport<OrbitType>))]
+	public required OrbitType OrbitType { get; init; }
 }

@@ -40,7 +40,7 @@ public class CelesTrakClientTests
 										 Rcs            = 399.0524,
 										 DataStatusCode = string.Empty,
 										 OrbitCenter    = "EA",
-										 OrbitType      = "ORB"
+										 OrbitType      = OrbitType.Orbit
 									 };
 		
 		SatCatRecord? zarya = await _client.GetRecord(SatCatRecordQueryType.Name, "ZARYA");
