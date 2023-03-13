@@ -39,6 +39,7 @@ public enum OrbitCentre
 	Uranus,
 	[EnumMember(Value = "VE")]
 	Venus,
+	// It'll use the cat ID here if it's docked... Which is awful, and messes with the typing, hence, the default
 	[EnumMember(Value = "Default")]
 	Docked
 }

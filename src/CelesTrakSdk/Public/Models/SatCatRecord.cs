@@ -72,10 +72,12 @@ public record SatCatRecord
 	[JsonPropertyName("DATA_STATUS_CODE")]
 	[Name("DATA_STATUS_CODE")]
 	public required string DataStatusCode { get; init; }
-
+	
 	[JsonPropertyName("ORBIT_CENTER")]
 	[Name("ORBIT_CENTER")]
-	public required string OrbitCenter { get; init; }
+	[JsonConverter(typeof(JsonStringEnumConverterWithAttributeSupport))]
+	[TypeConverter(typeof(StringEnumConverterWithAttributeSupport<OrbitCentre>))]
+	public required OrbitCentre OrbitCentre { get; init; }
 
 	[JsonPropertyName("ORBIT_TYPE")]
 	[Name("ORBIT_TYPE")]

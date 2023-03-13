@@ -39,7 +39,7 @@ public class CelesTrakClientTests
 										 Perigee        = 415,
 										 Rcs            = 399.0524,
 										 DataStatusCode = string.Empty,
-										 OrbitCenter    = "EA",
+										 OrbitCentre    = OrbitCentre.Earth,
 										 OrbitType      = OrbitType.Orbit
 									 };
 		
