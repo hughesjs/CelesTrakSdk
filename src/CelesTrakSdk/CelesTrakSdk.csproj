@@ -29,7 +29,7 @@
     <ItemGroup>
       <PackageReference Include="CsvHelper" Version="30.0.1" />
       <PackageReference Include="EnumExtensions.System.Text.Json" Version="1.1.0" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
     </ItemGroup>
 
 </Project>
