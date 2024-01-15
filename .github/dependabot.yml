@@ -9,8 +9,16 @@ updates:
     directory: "/src" # Location of package manifests
     schedule:
       interval: "daily"
+    groups:
+      nuget-dependencies:
+        patterns:
+          - "*"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      nuget-dependencies:
+        patterns:
+          - "*"
