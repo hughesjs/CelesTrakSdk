@@ -19,6 +19,6 @@ updates:
     schedule:
       interval: "daily"
     groups:
-      nuget-dependencies:
+      actions-dependencies:
         patterns:
           - "*"
