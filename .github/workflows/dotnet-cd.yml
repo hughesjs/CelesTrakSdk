@@ -6,6 +6,10 @@ on:
     paths: 
       - src/**
   workflow_dispatch:
+permissions:
+  contents: write
+  packages: write
+  id-token: write
 jobs:
 
   test:
@@ -52,7 +56,8 @@ jobs:
 
 
   github-publish:
-    permissions: write-all
+    permissions:
+      packages: write
     needs: semantic-release
     name: Publish to Github
     runs-on: ubuntu-latest
@@ -66,10 +71,12 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Push Package to GitHub
-      run: dotnet nuget push --api-key ${{secrets.GITHUB_TOKEN}} --source "https://nuget.pkg.github.com/hughesjs/index.json" *.nupkg
+      run: dotnet nuget push --api-key ${{secrets.GITHUB_TOKEN}} --source "https://nuget.pkg.github.com/hughesjs/index.json" --skip-duplicate *.nupkg
 
 
   nuget-publish:
+    permissions:
+      id-token: write
     needs: semantic-release
     name: Publish to Nuget
     runs-on: ubuntu-latest
@@ -82,5 +89,10 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 7.0.x
+    - name: NuGet login (OIDC → temp API key)
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: ${{ secrets.NUGET_USER }}
     - name: Push Package to Nuget
-      run: dotnet nuget push --api-key ${{secrets.NUGET_KEY}} --source "https://api.nuget.org/v3/index.json" *.nupkg
+      run: dotnet nuget push --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source "https://api.nuget.org/v3/index.json" --skip-duplicate *.nupkg
