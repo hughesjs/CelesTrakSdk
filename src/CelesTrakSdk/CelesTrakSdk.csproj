@@ -27,13 +27,14 @@
     </ItemGroup>
     
     <ItemGroup>
-      <PackageReference Include="ArchonAnalysers" Version="0.3.0">
+      <PackageReference Include="ArchonAnalysers" Version="0.4.0">
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
-      <PackageReference Include="CsvHelper" Version="32.0.1" />
-      <PackageReference Include="EnumExtensions.System.Text.Json" Version="1.1.0" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+      <PackageReference Include="CsvHelper" Version="33.1.0" />
+      <PackageReference Include="EnumExtensions.System.Text.Json" Version="1.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.4" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.4" />
     </ItemGroup>
 
 </Project>
