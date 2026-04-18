@@ -19,7 +19,7 @@ internal class StringEnumConverterWithAttributeSupport<TEnum>: EnumConverter whe
 
 		FieldInfo[] fieldInfos = typeof(TEnum).GetFields(BindingFlags.Public | BindingFlags.Static);
 
-		FieldInfo? relevantMember = fieldInfos.SingleOrDefault(m => m.GetCustomAttribute<EnumMemberAttribute>()?.Value == text);
+		FieldInfo? relevantMember = fieldInfos.SingleOrDefault(m => m.GetCustomAttribute<EnumMemberAttribute>()?.Value?.Equals(text, StringComparison.OrdinalIgnoreCase) == true);
 
 		if (relevantMember is not null)
 		{

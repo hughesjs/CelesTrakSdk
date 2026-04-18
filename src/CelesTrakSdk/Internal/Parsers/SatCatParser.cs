@@ -1,5 +1,4 @@
 using System.Globalization;
-using CelesTrakSdk.Internal.Extensions;
 using CelesTrakSdk.Public.Models;
 using CsvHelper;
 
