@@ -16,9 +16,9 @@ jobs:
     name: Test Project
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 10.0.x
     - name: Run tests
@@ -30,9 +30,9 @@ jobs:
     name: Create a Package Release
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4 # Need the full commit history for conventional commit
+    - uses: actions/checkout@v6 # Need the full commit history for conventional commit
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 10.0.x
     - name: Bump version and push tag
@@ -49,7 +49,7 @@ jobs:
     - name: Create Nuget Package
       run: dotnet build -c Release ./src/CelesTrakSdk.sln && dotnet pack -c Release -p:PackageVersion=${{ steps.tag_version.outputs.new_version }} -o . ./src/CelesTrakSdk.sln
     - name: Upload Package for Publishing
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: PackedLib
         path: ./*.nupkg
@@ -63,11 +63,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download built project  
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         name: PackedLib
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 10.0.x
     - name: Push Package to GitHub
@@ -82,11 +82,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download built project  
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         name: PackedLib
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 10.0.x
     - name: NuGet login (OIDC → temp API key)
